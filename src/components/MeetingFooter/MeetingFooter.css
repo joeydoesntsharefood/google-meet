@@ -32,18 +32,18 @@ div[disabled]
 
 .microphone-icon {
   border-radius: 0px !important;
-  /* border: 2px solid #CCFF00; */
+  border: 2px solid #CCFF00;
   background: transparent;
 }
 
 .video-icon {
   border-radius: 0px !important;
-  /* border: 2px solid #CCFF00; */
+  border: 2px solid #CCFF00;
   background: transparent;
 }
 
 .shared-icon {
   border-radius: 0px !important;
-  /* border: 2px solid #CCFF00; */
+  border: 2px solid #CCFF00;
   background: transparent;
 }
