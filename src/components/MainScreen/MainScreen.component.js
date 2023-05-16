@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import MeetingFooter from "../MeetingFooter/MeetingFooter.component";
 import Participants from "../Participants/Participants.component";
 import "./MainScreen.css";
@@ -8,12 +8,23 @@ import { setMainStream, updateUser } from "../../store/actioncreator";
 const MainScreen = (props) => {
   const participantRef = useRef(props.participants);
 
+  const [showOtherParticipants, setShowOtherParticipants] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('message', event => {
+      const message = event.data;
+      if (message === 'big') setShowOtherParticipants(true)
+      else  setShowOtherParticipants(false)
+    });
+  }, [])
+
   const onMicClick = (micEnabled) => {
     if (props.stream) {
       props.stream.getAudioTracks()[0].enabled = micEnabled;
       props.updateUser({ audio: micEnabled });
     }
   };
+
   const onVideoClick = (videoEnabled) => {
     if (props.stream) {
       props.stream.getVideoTracks()[0].enabled = videoEnabled;
@@ -75,7 +86,9 @@ const MainScreen = (props) => {
   return (
     <div className="wrapper">
       <div className="main-screen">
-        <Participants />
+        <Participants
+          showOtherParticipants={showOtherParticipants}
+        />
       </div>
 
       <div className="footer">
