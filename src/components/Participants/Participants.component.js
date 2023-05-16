@@ -78,7 +78,7 @@ const Participants = (props) => {
       }}
       className={`participants`}
     >
-      {participants}
+      {props.showOtherParticipants && participants}
       <Participant
         currentParticipant={currentUser}
         curentIndex={participantKey.length}
