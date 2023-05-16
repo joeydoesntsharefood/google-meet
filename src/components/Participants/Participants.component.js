@@ -72,9 +72,9 @@ const Participants = (props) => {
   return (
     <div
       style={{
-        "--grid-size": gridCol,
-        "--grid-col-size": gridColSize,
-        "--grid-row-size": gridRowSize,
+        "--grid-size": !props.showOtherParticipants ? 1 : gridCol,
+        "--grid-col-size": !props.showOtherParticipants ? 1 : gridColSize,
+        "--grid-row-size": !props.showOtherParticipants ? 1 : gridRowSize,
       }}
       className={`participants`}
     >
