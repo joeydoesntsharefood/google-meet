@@ -47,9 +47,14 @@ const MeetingFooter = (props) => {
   };
   useEffect(() => {
     props.onMicClick(streamState.mic);
+
+    // eslint-disable-next-line
   }, [streamState.mic]);
+  
   useEffect(() => {
     props.onVideoClick(streamState.video);
+
+    // eslint-disable-next-line
   }, [streamState.video]);
   return (
     <div className="meeting-footer">
