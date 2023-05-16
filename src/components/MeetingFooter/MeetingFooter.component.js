@@ -59,7 +59,7 @@ const MeetingFooter = (props) => {
   return (
     <div className="meeting-footer">
       <div
-        className={"meeting-icons " + (!streamState.mic ? "active" : "")}
+        className={"microphone-icon meeting-icons " + (!streamState.mic ? "active" : "")}
         data-tip={streamState.mic ? "Mute Audio" : "Unmute Audio"}
         onClick={micClick}
       >
@@ -69,14 +69,14 @@ const MeetingFooter = (props) => {
         />
       </div>
       <div
-        className={"meeting-icons " + (!streamState.video ? "active" : "")}
+        className={"video-icon meeting-icons " + (!streamState.video ? "active" : "")}
         data-tip={streamState.video ? "Hide Video" : "Show Video"}
         onClick={onVideoClick}
       >
         <FontAwesomeIcon icon={!streamState.video ? faVideoSlash : faVideo} />
       </div>
       <div
-        className="meeting-icons"
+        className="shared-icon meeting-icons"
         data-tip="Share Screen"
         onClick={onScreenClick}
         disabled={streamState.screen}
