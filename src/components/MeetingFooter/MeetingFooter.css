@@ -20,7 +20,7 @@
     cursor: pointer;
 
     @media (max-width: 800px) {
-      margin-top: 3px;
+      margin-top: 2px;
       width: 28px;
       height: 28px;
     }
